@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Exercise Plans - WellUp helps you create and track workout routines for busy students">
+    <title>Exercise Plans - WellUp</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/exercise.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="container">
+                <div class="logo">
+                    <a href="index.html"><h1>WellUp</h1></a>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html#home" class="nav-link">Home</a></li>
+                    <li><a href="index.html#features" class="nav-link">Features</a></li>
+                    <li><a href="index.html#about" class="nav-link">About</a></li>
+                    <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+                </ul>
+                <button class="menu-toggle" aria-label="Toggle menu">
+                    <span class="hamburger"></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <h2 class="page-title">💪 Exercise Plans</h2>
+            <p class="page-subtitle">Create and track your workout routines designed for busy students</p>
+        </div>
+    </section>
+
+    <!-- Weekly Schedule Overview -->
+    <section class="weekly-overview">
+        <div class="container">
+            <h3 class="section-title">Your Weekly Exercise Schedule</h3>
+            <div class="week-grid">
+                <div class="day-card" data-day="monday">
+                    <div class="day-header">Monday</div>
+                    <div class="day-workouts" id="monday-workouts">
+                        <p class="no-workout">Rest Day</p>
+                    </div>
+                </div>
+                <div class="day-card" data-day="tuesday">
+                    <div class="day-header">Tuesday</div>
+                    <div class="day-workouts" id="tuesday-workouts">
+                        <p class="no-workout">Rest Day</p>
+                    </div>
+                </div>
+                <div class="day-card" data-day="wednesday">
+                    <div class="day-header">Wednesday</div>
+                    <div class="day-workouts" id="wednesday-workouts">
+                        <p class="no-workout">Rest Day</p>
+                    </div>
+                </div>
+                <div class="day-card" data-day="thursday">
+                    <div class="day-header">Thursday</div>
+                    <div class="day-workouts" id="thursday-workouts">
+                        <p class="no-workout">Rest Day</p>
+                    </div>
+                </div>
+                <div class="day-card" data-day="friday">
+                    <div class="day-header">Friday</div>
+                    <div class="day-workouts" id="friday-workouts">
+                        <p class="no-workout">Rest Day</p>
+                    </div>
+                </div>
+                <div class="day-card" data-day="saturday">
+                    <div class="day-header">Saturday</div>
+                    <div class="day-workouts" id="saturday-workouts">
+                        <p class="no-workout">Rest Day</p>
+                    </div>
+                </div>
+                <div class="day-card" data-day="sunday">
+                    <div class="day-header">Sunday</div>
+                    <div class="day-workouts" id="sunday-workouts">
+                        <p class="no-workout">Rest Day</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Add Exercise Section -->
+    <section class="add-exercise">
+        <div class="container">
+            <div class="exercise-form-container">
+                <h3>Create Exercise Routine</h3>
+                <form id="exerciseForm">
+                    <div class="form-group">
+                        <label for="exerciseName">Exercise/Routine Name *</label>
+                        <input type="text" id="exerciseName" placeholder="e.g., Morning Jog, Upper Body Workout" required>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="exerciseDay">Day of Week *</label>
+                            <select id="exerciseDay" required>
+                                <option value="">Select day</option>
+                                <option value="monday">Monday</option>
+                                <option value="tuesday">Tuesday</option>
+                                <option value="wednesday">Wednesday</option>
+                                <option value="thursday">Thursday</option>
+                                <option value="friday">Friday</option>
+                                <option value="saturday">Saturday</option>
+                                <option value="sunday">Sunday</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="exerciseTime">Time *</label>
+                            <input type="time" id="exerciseTime" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="exerciseDuration">Duration (minutes) *</label>
+                            <input type="number" id="exerciseDuration" min="5" max="300" placeholder="e.g., 30" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="exerciseType">Exercise Type *</label>
+                            <select id="exerciseType" required>
+                                <option value="">Select type</option>
+                                <option value="cardio">Cardio</option>
+                                <option value="strength">Strength Training</option>
+                                <option value="flexibility">Flexibility/Yoga</option>
+                                <option value="sports">Sports</option>
+                                <option value="mixed">Mixed/Full Body</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="exerciseDescription">Exercise Description/Routine *</label>
+                        <textarea id="exerciseDescription" rows="4" placeholder="Describe your exercise routine in detail...&#10;&#10;Examples:&#10;- 10 min warm-up, 20 min running, 10 min cool down&#10;- 3 sets of push-ups (10 reps), 3 sets of squats (15 reps)&#10;- 30 min basketball practice at school court" required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="exerciseLocation">Location (Optional)</label>
+                        <input type="text" id="exerciseLocation" placeholder="e.g., School Gym, Home, Park">
+                    </div>
+
+                    <div class="form-group">
+                        <label>
+                            <input type="checkbox" id="exerciseReminder">
+                            Enable reminders for this exercise
+                        </label>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">
+                        <span>➕</span> Add to Schedule
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- All Routines Section -->
+    <section class="all-routines">
+        <div class="container">
+            <div class="routines-header">
+                <h3>All Exercise Routines</h3>
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="cardio">Cardio</button>
+                    <button class="filter-btn" data-filter="strength">Strength</button>
+                    <button class="filter-btn" data-filter="flexibility">Flexibility</button>
+                    <button class="filter-btn" data-filter="sports">Sports</button>
+                </div>
+            </div>
+
+            <div id="routinesList" class="routines-grid">
+                <!-- Routines will be populated by JavaScript -->
+            </div>
+
+            <div id="emptyState" class="empty-state" style="display: none;">
+                <div class="empty-icon">💪</div>
+                <p>No exercise routines yet. Create your first routine above!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Workout Ideas Section -->
+    <section class="workout-ideas">
+        <div class="container">
+            <h3 class="section-title">Quick Workout Ideas for Busy Students</h3>
+            <p class="section-subtitle">Short, effective exercises that fit your schedule</p>
+
+            <div class="ideas-grid">
+                <div class="idea-card">
+                    <div class="idea-header">
+                        <span class="idea-icon">🏃</span>
+                        <h4>10-Minute Morning Energizer</h4>
+                    </div>
+                    <ul class="idea-list">
+                        <li>2 min jumping jacks</li>
+                        <li>2 min high knees</li>
+                        <li>2 min burpees</li>
+                        <li>2 min mountain climbers</li>
+                        <li>2 min cool down stretch</li>
+                    </ul>
+                    <span class="idea-duration">⏱️ 10 mins</span>
+                </div>
+
+                <div class="idea-card">
+                    <div class="idea-header">
+                        <span class="idea-icon">💪</span>
+                        <h4>Dorm Room Strength</h4>
+                    </div>
+                    <ul class="idea-list">
+                        <li>20 push-ups (3 sets)</li>
+                        <li>30 squats (3 sets)</li>
+                        <li>30 sec plank (3 sets)</li>
+                        <li>15 lunges per leg (3 sets)</li>
+                        <li>20 crunches (3 sets)</li>
+                    </ul>
+                    <span class="idea-duration">⏱️ 20 mins</span>
+                </div>
+
+                <div class="idea-card">
+                    <div class="idea-header">
+                        <span class="idea-icon">🧘</span>
+                        <h4>Study Break Stretch</h4>
+                    </div>
+                    <ul class="idea-list">
+                        <li>Neck rolls (30 sec)</li>
+                        <li>Shoulder stretches (1 min)</li>
+                        <li>Torso twists (1 min)</li>
+                        <li>Forward bend (1 min)</li>
+                        <li>Leg stretches (1.5 min)</li>
+                    </ul>
+                    <span class="idea-duration">⏱️ 5 mins</span>
+                </div>
+
+                <div class="idea-card">
+                    <div class="idea-header">
+                        <span class="idea-icon">🚶</span>
+                        <h4>Active Commute</h4>
+                    </div>
+                    <ul class="idea-list">
+                        <li>Walk or bike to school</li>
+                        <li>Take stairs instead of elevator</li>
+                        <li>Walk between classes briskly</li>
+                        <li>Stand while studying (when possible)</li>
+                        <li>Stretch during breaks</li>
+                    </ul>
+                    <span class="idea-duration">⏱️ Throughout day</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Exercise Tips Section -->
+    <section class="exercise-tips">
+        <div class="container">
+            <h3 class="section-title">Exercise Tips for Students</h3>
+            <div class="tips-list">
+                <div class="tip-item">
+                    <span class="tip-number">1</span>
+                    <div class="tip-content">
+                        <h4>Start Small</h4>
+                        <p>Begin with 10-15 minute sessions and gradually increase. Consistency beats intensity when building habits.</p>
+                    </div>
+                </div>
+                <div class="tip-item">
+                    <span class="tip-number">2</span>
+                    <div class="tip-content">
+                        <h4>Schedule It</h4>
+                        <p>Treat exercise like a class. Block time in your calendar and stick to it.</p>
+                    </div>
+                </div>
+                <div class="tip-item">
+                    <span class="tip-number">3</span>
+                    <div class="tip-content">
+                        <h4>Find a Buddy</h4>
+                        <p>Exercise with friends for accountability and motivation. It's more fun and you're less likely to skip.</p>
+                    </div>
+                </div>
+                <div class="tip-item">
+                    <span class="tip-number">4</span>
+                    <div class="tip-content">
+                        <h4>No Equipment Needed</h4>
+                        <p>Bodyweight exercises are free, effective, and can be done anywhere. Push-ups, squats, and planks go a long way.</p>
+                    </div>
+                </div>
+                <div class="tip-item">
+                    <span class="tip-number">5</span>
+                    <div class="tip-content">
+                        <h4>Mix It Up</h4>
+                        <p>Vary your routines to prevent boredom and work different muscle groups. Try cardio, strength, and flexibility exercises.</p>
+                    </div>
+                </div>
+                <div class="tip-item">
+                    <span class="tip-number">6</span>
+                    <div class="tip-content">
+                        <h4>Listen to Your Body</h4>
+                        <p>Rest when needed. Recovery is crucial for progress and injury prevention.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 WellUp. All rights reserved.</p>
+            <p>Empowering polytechnic students to lead healthier lives.</p>
+        </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+    <script src="js/exercise.js"></script>
+</body>
+</html>

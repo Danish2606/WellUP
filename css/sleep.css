@@ -1,0 +1,525 @@
+/* ===================================
+   Sleep Management Page Styles
+   =================================== */
+
+/* Page Hero */
+.page-hero {
+    background: linear-gradient(135deg, #3B82F6 0%, #8B5CF6 100%);
+    color: var(--white);
+    padding: var(--spacing-xl) 0;
+    text-align: center;
+    min-height: 300px;
+    display: flex;
+    align-items: center;
+}
+
+/* Sleep Statistics Section */
+.sleep-stats {
+    padding: var(--spacing-xl) 0;
+    background: var(--light-gray);
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-md);
+}
+
+.stat-box {
+    background: var(--white);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    transition: var(--transition-normal);
+}
+
+.stat-box:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-xl);
+}
+
+.stat-icon {
+    font-size: 3rem;
+    background: linear-gradient(135deg, #3B82F6 0%, #8B5CF6 100%);
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.stat-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-value {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary-purple);
+    line-height: 1;
+    margin-bottom: var(--spacing-xs);
+}
+
+.stat-label {
+    font-size: 0.875rem;
+    color: var(--gray);
+    font-weight: 600;
+}
+
+/* Log Sleep Section */
+.log-sleep {
+    padding: var(--spacing-xl) 0;
+}
+
+.log-container {
+    max-width: 700px;
+    margin: 0 auto;
+    background: var(--white);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-xl);
+    border: 2px solid transparent;
+    background-image: linear-gradient(var(--white), var(--white)), 
+                      linear-gradient(135deg, #3B82F6 0%, #8B5CF6 100%);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+}
+
+.log-container h3 {
+    color: var(--primary-purple);
+    margin-bottom: var(--spacing-md);
+    font-size: 1.75rem;
+    text-align: center;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+}
+
+.form-group {
+    margin-bottom: var(--spacing-md);
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    color: var(--dark-gray);
+    margin-bottom: var(--spacing-xs);
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: var(--spacing-sm);
+    border: 2px solid var(--light-gray);
+    border-radius: var(--radius-sm);
+    font-family: var(--font-primary);
+    font-size: 1rem;
+    transition: var(--transition-normal);
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--primary-purple);
+    box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
+}
+
+#sleepForm .btn-primary {
+    width: 100%;
+    background: linear-gradient(135deg, #3B82F6 0%, #8B5CF6 100%);
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-xs);
+}
+
+/* Sleep History Section */
+.sleep-history {
+    padding: var(--spacing-xl) 0;
+    background: var(--light-gray);
+}
+
+.history-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-lg);
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+}
+
+.history-header h3 {
+    color: var(--primary-purple);
+    font-size: 1.75rem;
+    margin: 0;
+}
+
+.view-toggle {
+    display: flex;
+    gap: 0;
+    background: var(--white);
+    border-radius: var(--radius-full);
+    padding: 0.25rem;
+    box-shadow: var(--shadow-sm);
+}
+
+.toggle-btn {
+    padding: var(--spacing-xs) var(--spacing-md);
+    border: none;
+    background: transparent;
+    color: var(--gray);
+    border-radius: var(--radius-full);
+    cursor: pointer;
+    font-weight: 600;
+    transition: var(--transition-normal);
+}
+
+.toggle-btn.active {
+    background: linear-gradient(135deg, #3B82F6 0%, #8B5CF6 100%);
+    color: var(--white);
+}
+
+.toggle-btn:hover:not(.active) {
+    background: var(--light-gray);
+}
+
+/* Chart Container */
+.chart-container {
+    background: var(--white);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    margin-bottom: var(--spacing-lg);
+    min-height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#sleepChart {
+    max-width: 100%;
+    height: auto;
+}
+
+.chart-placeholder {
+    text-align: center;
+    color: var(--gray);
+    padding: var(--spacing-xl);
+}
+
+.chart-placeholder-icon {
+    font-size: 4rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+/* Sleep Entries */
+.sleep-entries h4 {
+    color: var(--primary-purple);
+    margin-bottom: var(--spacing-md);
+    font-size: 1.5rem;
+}
+
+.entries-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.entry-card {
+    background: var(--white);
+    padding: var(--spacing-md);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--spacing-md);
+    transition: var(--transition-normal);
+}
+
+.entry-card:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateX(5px);
+}
+
+.entry-date {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(135deg, #3B82F6 0%, #8B5CF6 100%);
+    color: var(--white);
+    padding: var(--spacing-sm);
+    border-radius: var(--radius-md);
+    min-width: 80px;
+}
+
+.entry-day {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.entry-month {
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+.entry-details {
+    flex: 1;
+}
+
+.entry-details h5 {
+    color: var(--dark-gray);
+    margin-bottom: var(--spacing-xs);
+    font-size: 1.125rem;
+}
+
+.entry-meta {
+    display: flex;
+    gap: var(--spacing-md);
+    flex-wrap: wrap;
+    margin-bottom: var(--spacing-xs);
+}
+
+.entry-info {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    color: var(--gray);
+    font-size: 0.875rem;
+}
+
+.quality-badge {
+    display: inline-block;
+    padding: 0.25rem var(--spacing-sm);
+    border-radius: var(--radius-full);
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.quality-excellent {
+    background: #D1FAE5;
+    color: #065F46;
+}
+
+.quality-good {
+    background: #DBEAFE;
+    color: #1E40AF;
+}
+
+.quality-fair {
+    background: #FEF3C7;
+    color: #92400E;
+}
+
+.quality-poor {
+    background: #FEE2E2;
+    color: #991B1B;
+}
+
+.entry-notes {
+    color: var(--gray);
+    font-size: 0.875rem;
+    font-style: italic;
+}
+
+.entry-actions {
+    display: flex;
+    gap: var(--spacing-xs);
+}
+
+.btn-delete-entry {
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border: none;
+    background: var(--accent-red);
+    color: var(--white);
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    font-size: 0.875rem;
+    font-weight: 600;
+    transition: var(--transition-normal);
+}
+
+.btn-delete-entry:hover {
+    background: #dc2626;
+    transform: scale(1.05);
+}
+
+/* Empty State */
+.empty-state {
+    text-align: center;
+    padding: var(--spacing-xl);
+    color: var(--gray);
+}
+
+.empty-icon {
+    font-size: 4rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+/* Sleep Tips Section */
+.sleep-tips {
+    padding: var(--spacing-xl) 0;
+}
+
+.tips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-lg);
+}
+
+.tip-card {
+    background: var(--white);
+    padding: var(--spacing-md);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    transition: var(--transition-normal);
+}
+
+.tip-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-xl);
+}
+
+.tip-icon {
+    font-size: 2.5rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+.tip-card h4 {
+    color: var(--primary-purple);
+    margin-bottom: var(--spacing-sm);
+    font-size: 1.25rem;
+}
+
+.tip-card p {
+    color: var(--gray);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Goal Setting Section */
+.goal-setting {
+    padding: var(--spacing-xl) 0;
+    background: var(--light-gray);
+}
+
+.goal-box {
+    max-width: 600px;
+    margin: 0 auto;
+    background: var(--white);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    text-align: center;
+}
+
+.goal-box h3 {
+    color: var(--primary-purple);
+    margin-bottom: var(--spacing-sm);
+}
+
+.goal-box p {
+    color: var(--gray);
+    margin-bottom: var(--spacing-md);
+}
+
+.goal-input-group {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.goal-input-group label {
+    font-weight: 600;
+    color: var(--dark-gray);
+}
+
+.goal-input-group input {
+    width: 100px;
+    padding: var(--spacing-sm);
+    border: 2px solid var(--light-gray);
+    border-radius: var(--radius-sm);
+    font-size: 1rem;
+    text-align: center;
+}
+
+.goal-input-group input:focus {
+    outline: none;
+    border-color: var(--primary-purple);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .history-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .entry-card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .entry-date {
+        width: 100%;
+        flex-direction: row;
+        justify-content: center;
+        gap: var(--spacing-sm);
+    }
+
+    .entry-actions {
+        width: 100%;
+    }
+
+    .btn-delete-entry {
+        flex: 1;
+    }
+
+    .goal-input-group {
+        flex-direction: column;
+    }
+
+    .goal-input-group input {
+        width: 100%;
+    }
+
+    .tips-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .log-container {
+        padding: var(--spacing-md);
+    }
+
+    .stat-box {
+        flex-direction: column;
+        text-align: center;
+    }
+}

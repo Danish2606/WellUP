@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sleep Management - WellUp helps you track sleep patterns and improve rest quality">
+    <title>Sleep Management - WellUp</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/sleep.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="container">
+                <div class="logo">
+                    <a href="index.html"><h1>WellUp</h1></a>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html#home" class="nav-link">Home</a></li>
+                    <li><a href="index.html#features" class="nav-link">Features</a></li>
+                    <li><a href="index.html#about" class="nav-link">About</a></li>
+                    <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+                </ul>
+                <button class="menu-toggle" aria-label="Toggle menu">
+                    <span class="hamburger"></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <h2 class="page-title">😴 Sleep Management</h2>
+            <p class="page-subtitle">Track your sleep patterns and improve your rest quality</p>
+        </div>
+    </section>
+
+    <!-- Sleep Statistics Section -->
+    <section class="sleep-stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-box">
+                    <div class="stat-icon">🌙</div>
+                    <div class="stat-content">
+                        <span class="stat-value" id="todaySleep">0h</span>
+                        <span class="stat-label">Today's Sleep</span>
+                    </div>
+                </div>
+                
+                <div class="stat-box">
+                    <div class="stat-icon">📅</div>
+                    <div class="stat-content">
+                        <span class="stat-value" id="weekAverage">0h</span>
+                        <span class="stat-label">Weekly Average</span>
+                    </div>
+                </div>
+                
+                <div class="stat-box">
+                    <div class="stat-icon">📊</div>
+                    <div class="stat-content">
+                        <span class="stat-value" id="monthAverage">0h</span>
+                        <span class="stat-label">Monthly Average</span>
+                    </div>
+                </div>
+                
+                <div class="stat-box">
+                    <div class="stat-icon">🎯</div>
+                    <div class="stat-content">
+                        <span class="stat-value" id="sleepGoal">8h</span>
+                        <span class="stat-label">Your Goal</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Log Sleep Section -->
+    <section class="log-sleep">
+        <div class="container">
+            <div class="log-container">
+                <h3>Log Your Sleep</h3>
+                <form id="sleepForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="sleepDate">Date</label>
+                            <input type="date" id="sleepDate" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="sleepHours">Hours of Sleep</label>
+                            <input type="number" id="sleepHours" min="0" max="24" step="0.5" placeholder="e.g., 7.5" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="bedtime">Bedtime (Optional)</label>
+                            <input type="time" id="bedtime">
+                        </div>
+                        <div class="form-group">
+                            <label for="wakeTime">Wake Time (Optional)</label>
+                            <input type="time" id="wakeTime">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="sleepQuality">Sleep Quality</label>
+                        <select id="sleepQuality" required>
+                            <option value="">Rate your sleep quality</option>
+                            <option value="5">⭐⭐⭐⭐⭐ Excellent</option>
+                            <option value="4">⭐⭐⭐⭐ Good</option>
+                            <option value="3">⭐⭐⭐ Fair</option>
+                            <option value="2">⭐⭐ Poor</option>
+                            <option value="1">⭐ Very Poor</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="sleepNotes">Notes (Optional)</label>
+                        <textarea id="sleepNotes" rows="2" placeholder="Any factors affecting your sleep? (stress, caffeine, exercise, etc.)"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">
+                        <span>💤</span> Log Sleep
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sleep History Section -->
+    <section class="sleep-history">
+        <div class="container">
+            <div class="history-header">
+                <h3>Sleep History</h3>
+                <div class="view-toggle">
+                    <button class="toggle-btn active" data-view="week" onclick="switchView('week')">Week</button>
+                    <button class="toggle-btn" data-view="month" onclick="switchView('month')">Month</button>
+                </div>
+            </div>
+
+            <!-- Sleep Chart Visualization -->
+            <div class="chart-container">
+                <canvas id="sleepChart"></canvas>
+            </div>
+
+            <!-- Sleep Log Entries -->
+            <div class="sleep-entries">
+                <h4>Recent Entries</h4>
+                <div id="entriesList" class="entries-list">
+                    <!-- Entries will be populated by JavaScript -->
+                </div>
+                
+                <div id="emptyState" class="empty-state" style="display: none;">
+                    <div class="empty-icon">😴</div>
+                    <p>No sleep entries yet. Start tracking your sleep above!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sleep Tips Section -->
+    <section class="sleep-tips">
+        <div class="container">
+            <h3 class="section-title">Tips for Better Sleep</h3>
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <div class="tip-icon">⏰</div>
+                    <h4>Consistent Schedule</h4>
+                    <p>Go to bed and wake up at the same time every day, even on weekends. This regulates your body's internal clock.</p>
+                </div>
+
+                <div class="tip-card">
+                    <div class="tip-icon">📱</div>
+                    <h4>Screen Time Limit</h4>
+                    <p>Avoid screens (phone, laptop, TV) at least 1 hour before bed. Blue light disrupts melatonin production.</p>
+                </div>
+
+                <div class="tip-card">
+                    <div class="tip-icon">☕</div>
+                    <h4>Watch Caffeine Intake</h4>
+                    <p>Avoid caffeine after 2 PM. It stays in your system for 6-8 hours and can interfere with falling asleep.</p>
+                </div>
+
+                <div class="tip-card">
+                    <div class="tip-icon">🌡️</div>
+                    <h4>Cool Room Temperature</h4>
+                    <p>Keep your bedroom cool (60-67°F / 15-19°C). A cooler room promotes better sleep quality.</p>
+                </div>
+
+                <div class="tip-card">
+                    <div class="tip-icon">🏃</div>
+                    <h4>Regular Exercise</h4>
+                    <p>Exercise regularly, but not too close to bedtime. Physical activity improves sleep quality significantly.</p>
+                </div>
+
+                <div class="tip-card">
+                    <div class="tip-icon">🍽️</div>
+                    <h4>Light Evening Meals</h4>
+                    <p>Avoid heavy meals 2-3 hours before bed. Large meals can cause discomfort and disrupt sleep.</p>
+                </div>
+
+                <div class="tip-card">
+                    <div class="tip-icon">🛏️</div>
+                    <h4>Comfortable Environment</h4>
+                    <p>Invest in a comfortable mattress and pillows. Your sleep environment significantly impacts rest quality.</p>
+                </div>
+
+                <div class="tip-card">
+                    <div class="tip-icon">📖</div>
+                    <h4>Bedtime Routine</h4>
+                    <p>Develop a relaxing pre-sleep routine like reading or gentle stretching to signal your body it's time to sleep.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sleep Goal Setting -->
+    <section class="goal-setting">
+        <div class="container">
+            <div class="goal-box">
+                <h3>Set Your Sleep Goal</h3>
+                <p>Recommended: 7-9 hours for adults (18-64 years old)</p>
+                <div class="goal-input-group">
+                    <label for="goalHours">Target hours per night:</label>
+                    <input type="number" id="goalHours" min="4" max="12" step="0.5" value="8">
+                    <button class="btn btn-primary" onclick="updateGoal()">Update Goal</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 WellUp. All rights reserved.</p>
+            <p>Empowering polytechnic students to lead healthier lives.</p>
+        </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+    <script src="js/sleep.js"></script>
+</body>
+</html>

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Personal Care & Hygiene Tips - WellUp helps you maintain personal grooming and self-care routines">
+    <title>Personal Care - WellUp</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/personal-care.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="container">
+                <div class="logo">
+                    <a href="index.html"><h1>WellUp</h1></a>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html#home" class="nav-link">Home</a></li>
+                    <li><a href="index.html#features" class="nav-link">Features</a></li>
+                    <li><a href="index.html#about" class="nav-link">About</a></li>
+                    <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+                </ul>
+                <button class="menu-toggle" aria-label="Toggle menu">
+                    <span class="hamburger"></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <h2 class="page-title">✨ Personal Care & Hygiene</h2>
+            <p class="page-subtitle">Build lasting self-care habits that make you feel confident and refreshed</p>
+        </div>
+    </section>
+
+    <!-- Hygiene Tips Section -->
+    <section class="hygiene-tips">
+        <div class="container">
+            <h3 class="section-title">Essential Hygiene Tips</h3>
+            <p class="section-subtitle">Daily practices for optimal personal care</p>
+
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <div class="tip-icon">🚿</div>
+                    <h4>Daily Shower</h4>
+                    <p>Shower daily, especially after physical activities. Use lukewarm water and moisturize afterward to keep skin healthy.</p>
+                    <span class="tip-frequency">Daily</span>
+                </div>
+
+                <div class="tip-card">
+                    <div class="tip-icon">🪥</div>
+                    <h4>Oral Hygiene</h4>
+                    <p>Brush teeth twice daily for 2 minutes, floss once a day, and use mouthwash. Don't forget your tongue!</p>
+                    <span class="tip-frequency">2x Daily</span>
+                </div>
+
+                <div class="tip-card">
+                    <div class="tip-icon">✋</div>
+                    <h4>Hand Washing</h4>
+                    <p>Wash hands before meals, after restroom use, and when coming home. Use soap and scrub for at least 20 seconds.</p>
+                    <span class="tip-frequency">Throughout Day</span>
+                </div>
+
+                <div class="tip-card">
+                    <div class="tip-icon">💇</div>
+                    <h4>Hair Care</h4>
+                    <p>Wash hair 2-3 times per week, use conditioner, and get regular trims. Choose products suitable for your hair type.</p>
+                    <span class="tip-frequency">2-3x Weekly</span>
+                </div>
+
+                <div class="tip-card">
+                    <div class="tip-icon">💅</div>
+                    <h4>Nail Care</h4>
+                    <p>Keep nails clean and trimmed. Clean under nails regularly and moisturize cuticles to prevent hangnails.</p>
+                    <span class="tip-frequency">Weekly</span>
+                </div>
+
+                <div class="tip-card">
+                    <div class="tip-icon">👕</div>
+                    <h4>Clean Clothes</h4>
+                    <p>Wear fresh clothes daily, especially undergarments and socks. Wash gym clothes after each use to prevent bacteria buildup.</p>
+                    <span class="tip-frequency">Daily</span>
+                </div>
+
+                <div class="tip-card">
+                    <div class="tip-icon">🧴</div>
+                    <h4>Skincare Routine</h4>
+                    <p>Cleanse, moisturize, and apply sunscreen daily. Remove makeup before bed and stay hydrated for healthy skin.</p>
+                    <span class="tip-frequency">Morning & Night</span>
+                </div>
+
+                <div class="tip-card">
+                    <div class="tip-icon">😊</div>
+                    <h4>Deodorant/Antiperspirant</h4>
+                    <p>Apply deodorant daily after showering. Reapply as needed, especially before physical activities or in hot weather.</p>
+                    <span class="tip-frequency">Daily</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Personal Care Tracker Section -->
+    <section class="care-tracker">
+        <div class="container">
+            <h3 class="section-title">Your Personal Care Routine</h3>
+            <p class="section-subtitle">Track and customize your own self-care habits</p>
+
+            <!-- Add New Care Item Form -->
+            <div class="add-care-form">
+                <h4>Add New Personal Care Item</h4>
+                <form id="careForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="careName">Care Activity</label>
+                            <input type="text" id="careName" placeholder="e.g., Face mask, Foot soak, Hair treatment" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="careFrequency">Frequency</label>
+                            <select id="careFrequency" required>
+                                <option value="">Select frequency</option>
+                                <option value="Daily">Daily</option>
+                                <option value="2x Daily">2x Daily</option>
+                                <option value="3x Daily">3x Daily</option>
+                                <option value="2-3x Weekly">2-3x Weekly</option>
+                                <option value="Weekly">Weekly</option>
+                                <option value="Bi-Weekly">Bi-Weekly</option>
+                                <option value="Monthly">Monthly</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="careNotes">Notes (Optional)</label>
+                        <textarea id="careNotes" rows="3" placeholder="Add any additional details or reminders..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">
+                        <span>➕</span> Add to Routine
+                    </button>
+                </form>
+            </div>
+
+            <!-- Personal Care List -->
+            <div class="care-list">
+                <h4>My Personal Care Routine</h4>
+                <div id="careItems" class="care-items">
+                    <!-- Sample items - will be populated by JavaScript -->
+                    <div class="care-item">
+                        <div class="care-item-header">
+                            <h5>Morning Skincare</h5>
+                            <span class="frequency-badge">Daily</span>
+                        </div>
+                        <p class="care-notes">Cleanse, toner, moisturizer, and sunscreen</p>
+                        <div class="care-actions">
+                            <button class="btn-complete" onclick="toggleComplete(this)">✓ Done</button>
+                            <button class="btn-delete" onclick="deleteItem(this)">🗑️ Delete</button>
+                        </div>
+                    </div>
+
+                    <div class="care-item">
+                        <div class="care-item-header">
+                            <h5>Weekly Face Mask</h5>
+                            <span class="frequency-badge">Weekly</span>
+                        </div>
+                        <p class="care-notes">Hydrating face mask every Sunday evening</p>
+                        <div class="care-actions">
+                            <button class="btn-complete" onclick="toggleComplete(this)">✓ Done</button>
+                            <button class="btn-delete" onclick="deleteItem(this)">🗑️ Delete</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Tips Section -->
+    <section class="quick-tips">
+        <div class="container">
+            <h3 class="section-title">Quick Personal Care Tips for Busy Students</h3>
+            <div class="tips-list">
+                <div class="quick-tip">
+                    <span class="tip-number">1</span>
+                    <p><strong>Set Reminders:</strong> Use phone alarms for important hygiene tasks you might forget during busy days.</p>
+                </div>
+                <div class="quick-tip">
+                    <span class="tip-number">2</span>
+                    <p><strong>Keep Essentials Handy:</strong> Carry hand sanitizer, tissues, and lip balm in your bag for on-the-go care.</p>
+                </div>
+                <div class="quick-tip">
+                    <span class="tip-number">3</span>
+                    <p><strong>Night Routine:</strong> Establish a simple 5-minute bedtime routine - it's easier to maintain than complex ones.</p>
+                </div>
+                <div class="quick-tip">
+                    <span class="tip-number">4</span>
+                    <p><strong>Hydrate:</strong> Drinking enough water is one of the best things you can do for your skin and overall health.</p>
+                </div>
+                <div class="quick-tip">
+                    <span class="tip-number">5</span>
+                    <p><strong>Sleep Well:</strong> Good sleep is essential for skin health and overall appearance. Aim for 7-8 hours.</p>
+                </div>
+                <div class="quick-tip">
+                    <span class="tip-number">6</span>
+                    <p><strong>Batch Tasks:</strong> Do weekly grooming tasks (nail care, hair masks) on the same day to save time.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 WellUp. All rights reserved.</p>
+            <p>Empowering polytechnic students to lead healthier lives.</p>
+        </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+    <script src="js/personal-care.js"></script>
+</body>
+</html>

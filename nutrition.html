@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Nutrition Tracking - WellUp helps you monitor meals and estimate calories">
+    <title>Nutrition Tracking - WellUp</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/nutrition.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="container">
+                <div class="logo">
+                    <a href="index.html"><h1>WellUp</h1></a>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html#home" class="nav-link">Home</a></li>
+                    <li><a href="index.html#features" class="nav-link">Features</a></li>
+                    <li><a href="index.html#about" class="nav-link">About</a></li>
+                    <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+                </ul>
+                <button class="menu-toggle" aria-label="Toggle menu">
+                    <span class="hamburger"></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <h2 class="page-title">🍎 Nutrition Tracking</h2>
+            <p class="page-subtitle">Track your meals and monitor your daily calorie intake</p>
+        </div>
+    </section>
+
+    <!-- Daily Summary Dashboard -->
+    <section class="daily-summary">
+        <div class="container">
+            <h3 class="section-title">Today's Nutrition Summary</h3>
+            <div class="summary-grid">
+                <div class="summary-card">
+                    <div class="summary-icon">🔥</div>
+                    <div class="summary-content">
+                        <h4>Total Calories</h4>
+                        <p class="summary-value" id="totalCalories">0</p>
+                        <p class="summary-label">kcal consumed</p>
+                    </div>
+                </div>
+                <div class="summary-card">
+                    <div class="summary-icon">🍽️</div>
+                    <div class="summary-content">
+                        <h4>Meals Logged</h4>
+                        <p class="summary-value" id="mealsCount">0</p>
+                        <p class="summary-label">meals today</p>
+                    </div>
+                </div>
+                <div class="summary-card">
+                    <div class="summary-icon">🎯</div>
+                    <div class="summary-content">
+                        <h4>Daily Goal</h4>
+                        <p class="summary-value" id="dailyGoal">2000</p>
+                        <p class="summary-label">kcal target</p>
+                    </div>
+                </div>
+                <div class="summary-card">
+                    <div class="summary-icon">📊</div>
+                    <div class="summary-content">
+                        <h4>Remaining</h4>
+                        <p class="summary-value" id="remainingCalories">2000</p>
+                        <p class="summary-label">kcal left</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Progress Bar -->
+            <div class="progress-container">
+                <div class="progress-header">
+                    <span>Daily Progress</span>
+                    <span id="progressPercent">0%</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill" style="width: 0%"></div>
+                </div>
+            </div>
+
+            <!-- Water Intake Tracker -->
+            <div class="water-tracker">
+                <div class="water-header">
+                    <div class="water-title">
+                        <span class="water-icon">💧</span>
+                        <h4>Daily Water Intake</h4>
+                    </div>
+                    <div class="water-stats">
+                        <span id="waterCount">0</span> / <span id="waterGoal">8</span> glasses
+                    </div>
+                </div>
+                <div class="water-glasses">
+                    <div class="glass" data-glass="1" onclick="toggleGlass(1)">
+                        <div class="glass-fill"></div>
+                        <span class="glass-number">1</span>
+                    </div>
+                    <div class="glass" data-glass="2" onclick="toggleGlass(2)">
+                        <div class="glass-fill"></div>
+                        <span class="glass-number">2</span>
+                    </div>
+                    <div class="glass" data-glass="3" onclick="toggleGlass(3)">
+                        <div class="glass-fill"></div>
+                        <span class="glass-number">3</span>
+                    </div>
+                    <div class="glass" data-glass="4" onclick="toggleGlass(4)">
+                        <div class="glass-fill"></div>
+                        <span class="glass-number">4</span>
+                    </div>
+                    <div class="glass" data-glass="5" onclick="toggleGlass(5)">
+                        <div class="glass-fill"></div>
+                        <span class="glass-number">5</span>
+                    </div>
+                    <div class="glass" data-glass="6" onclick="toggleGlass(6)">
+                        <div class="glass-fill"></div>
+                        <span class="glass-number">6</span>
+                    </div>
+                    <div class="glass" data-glass="7" onclick="toggleGlass(7)">
+                        <div class="glass-fill"></div>
+                        <span class="glass-number">7</span>
+                    </div>
+                    <div class="glass" data-glass="8" onclick="toggleGlass(8)">
+                        <div class="glass-fill"></div>
+                        <span class="glass-number">8</span>
+                    </div>
+                </div>
+                <div class="water-actions">
+                    <button class="btn-water-action" onclick="addGlass()">➕ Add Glass</button>
+                    <button class="btn-water-action" onclick="resetWater()">🔄 Reset</button>
+                </div>
+                <p class="water-reminder">💡 Tip: Aim for 8 glasses (2L) of water daily for optimal hydration!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Add Meal Section -->
+    <section class="add-meal">
+        <div class="container">
+            <div class="meal-form-container">
+                <h3>Log Your Meal</h3>
+                <form id="mealForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="mealType">Meal Type *</label>
+                            <select id="mealType" required>
+                                <option value="">Select meal type</option>
+                                <option value="breakfast">🌅 Breakfast</option>
+                                <option value="lunch">☀️ Lunch</option>
+                                <option value="dinner">🌙 Dinner</option>
+                                <option value="snack">🍪 Snack</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="mealTime">Time *</label>
+                            <input type="time" id="mealTime" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="foodItems">What did you eat? *</label>
+                        <textarea id="foodItems" rows="3" placeholder="Describe your meal in detail...&#10;&#10;Examples:&#10;- 2 slices of whole wheat bread with peanut butter&#10;- Chicken rice with vegetables&#10;- Nasi lemak with fried chicken&#10;- Apple and a granola bar" required></textarea>
+                        <small class="form-hint">Be as specific as possible for better calorie estimates</small>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="portionSize">Portion Size *</label>
+                            <select id="portionSize" required>
+                                <option value="">Select portion size</option>
+                                <option value="small">Small</option>
+                                <option value="medium">Medium</option>
+                                <option value="large">Large</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="manualCalories">Manual Calories (Optional)</label>
+                            <input type="number" id="manualCalories" min="0" placeholder="Leave blank for auto-estimate">
+                            <small class="form-hint">If you know the exact calories</small>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="mealNotes">Notes (Optional)</label>
+                        <input type="text" id="mealNotes" placeholder="e.g., Ate at school canteen, homemade">
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">
+                        <span>➕</span> Log Meal
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Today's Meals Section -->
+    <section class="todays-meals">
+        <div class="container">
+            <div class="meals-header">
+                <h3>Today's Meals</h3>
+                <button class="btn-secondary" id="setGoalBtn">Set Daily Goal</button>
+            </div>
+
+            <div class="meals-by-type">
+                <!-- Breakfast -->
+                <div class="meal-category">
+                    <h4 class="category-title">🌅 Breakfast</h4>
+                    <div id="breakfastMeals" class="meal-entries">
+                        <p class="no-meals">No breakfast logged yet</p>
+                    </div>
+                </div>
+
+                <!-- Lunch -->
+                <div class="meal-category">
+                    <h4 class="category-title">☀️ Lunch</h4>
+                    <div id="lunchMeals" class="meal-entries">
+                        <p class="no-meals">No lunch logged yet</p>
+                    </div>
+                </div>
+
+                <!-- Dinner -->
+                <div class="meal-category">
+                    <h4 class="category-title">🌙 Dinner</h4>
+                    <div id="dinnerMeals" class="meal-entries">
+                        <p class="no-meals">No dinner logged yet</p>
+                    </div>
+                </div>
+
+                <!-- Snacks -->
+                <div class="meal-category">
+                    <h4 class="category-title">🍪 Snacks</h4>
+                    <div id="snackMeals" class="meal-entries">
+                        <p class="no-meals">No snacks logged yet</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Meal History Section -->
+    <section class="meal-history">
+        <div class="container">
+            <h3 class="section-title">7-Day History</h3>
+            <div class="history-chart" id="historyChart">
+                <!-- Chart will be generated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Nutrition Tips Section -->
+    <section class="nutrition-tips">
+        <div class="container">
+            <h3 class="section-title">Nutrition Tips for Students</h3>
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <div class="tip-icon">🥗</div>
+                    <h4>Eat Regular Meals</h4>
+                    <p>Don't skip meals, especially breakfast. Regular eating helps maintain energy and focus for classes.</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">💧</div>
+                    <h4>Stay Hydrated</h4>
+                    <p>Drink plenty of water throughout the day. Dehydration can affect concentration and energy levels.</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">🍎</div>
+                    <h4>Healthy Snacks</h4>
+                    <p>Keep fruits, nuts, or yogurt handy for quick, nutritious snacks between classes.</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">🥘</div>
+                    <h4>Balanced Plates</h4>
+                    <p>Try to include vegetables, protein, and carbs in main meals for sustained energy.</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">⏰</div>
+                    <h4>Meal Timing</h4>
+                    <p>Try to eat at consistent times daily. It helps regulate metabolism and hunger patterns.</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">🍕</div>
+                    <h4>Mindful Eating</h4>
+                    <p>It's okay to enjoy treats occasionally, but focus on nutritious whole foods most of the time.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Goal Setting Modal -->
+    <div id="goalModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Set Your Daily Calorie Goal</h3>
+            <p>Recommended daily intake for students: 1800-2500 kcal</p>
+            <form id="goalForm">
+                <div class="form-group">
+                    <label for="goalCalories">Daily Calorie Goal *</label>
+                    <input type="number" id="goalCalories" min="1000" max="5000" value="2000" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Save Goal</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 WellUp. All rights reserved.</p>
+            <p>Empowering polytechnic students to lead healthier lives.</p>
+        </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+    <script src="js/nutrition.js"></script>
+</body>
+</html>

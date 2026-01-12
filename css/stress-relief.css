@@ -1,0 +1,525 @@
+/* ===================================
+   Stress Relief Page Styles
+   =================================== */
+
+/* Page Hero */
+.page-hero {
+    background: linear-gradient(135deg, #8B5CF6 0%, #06B6D4 100%);
+    color: var(--white);
+    padding: var(--spacing-xl) 0;
+    text-align: center;
+    min-height: 300px;
+    display: flex;
+    align-items: center;
+}
+
+/* Stress Tips Section */
+.stress-tips {
+    padding: var(--spacing-xl) 0;
+    background-color: var(--light-gray);
+}
+
+.tips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-lg);
+}
+
+.tip-card {
+    background: var(--white);
+    padding: var(--spacing-md);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    transition: var(--transition-normal);
+    position: relative;
+    overflow: hidden;
+}
+
+.tip-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(135deg, #8B5CF6 0%, #06B6D4 100%);
+}
+
+.tip-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-xl);
+}
+
+.tip-icon {
+    font-size: 2.5rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+.tip-card h4 {
+    color: var(--primary-purple);
+    margin-bottom: var(--spacing-sm);
+    font-size: 1.25rem;
+}
+
+.tip-card p {
+    color: var(--gray);
+    line-height: 1.6;
+    margin-bottom: var(--spacing-sm);
+}
+
+.tip-duration {
+    display: inline-block;
+    background: linear-gradient(135deg, #06B6D4 0%, #3B82F6 100%);
+    color: var(--white);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--radius-full);
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+/* Breathing Exercise Section */
+.breathing-exercise {
+    padding: var(--spacing-xl) 0;
+    background: var(--white);
+}
+
+.breathing-container {
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.breathing-circle {
+    width: 200px;
+    height: 200px;
+    margin: var(--spacing-lg) auto;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #8B5CF6 0%, #06B6D4 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-xl);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.breathing-circle:hover {
+    transform: scale(1.05);
+}
+
+.breathing-circle p {
+    color: var(--white);
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.breathing-circle.breathing-in {
+    animation: breatheIn 4s ease-in-out;
+}
+
+.breathing-circle.breathing-out {
+    animation: breatheOut 4s ease-in-out;
+}
+
+@keyframes breatheIn {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.5);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes breatheOut {
+    0% {
+        transform: scale(1.5);
+    }
+    50% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.5);
+    }
+}
+
+.breathing-instruction {
+    color: var(--gray);
+    font-style: italic;
+    margin-top: var(--spacing-md);
+}
+
+/* Hobbies Section */
+.hobbies-section {
+    padding: var(--spacing-xl) 0;
+    background-color: var(--light-gray);
+}
+
+/* Add Hobby Form */
+.add-hobby-form {
+    background: var(--white);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    margin-bottom: var(--spacing-lg);
+    border: 2px solid transparent;
+    background-image: linear-gradient(var(--white), var(--white)), 
+                      linear-gradient(135deg, #8B5CF6 0%, #06B6D4 100%);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+}
+
+.add-hobby-form h4 {
+    color: var(--primary-purple);
+    margin-bottom: var(--spacing-md);
+    font-size: 1.5rem;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+}
+
+.form-group {
+    margin-bottom: var(--spacing-md);
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    color: var(--dark-gray);
+    margin-bottom: var(--spacing-xs);
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: var(--spacing-sm);
+    border: 2px solid var(--light-gray);
+    border-radius: var(--radius-sm);
+    font-family: var(--font-primary);
+    font-size: 1rem;
+    transition: var(--transition-normal);
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--primary-purple);
+    box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
+}
+
+.add-hobby-form .btn-primary {
+    width: 100%;
+    background: linear-gradient(135deg, #8B5CF6 0%, #06B6D4 100%);
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-xs);
+}
+
+/* Hobbies List */
+.hobbies-list {
+    background: var(--white);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+}
+
+.list-header {
+    margin-bottom: var(--spacing-md);
+}
+
+.list-header h4 {
+    color: var(--primary-purple);
+    margin-bottom: var(--spacing-sm);
+    font-size: 1.5rem;
+}
+
+.filter-tags {
+    display: flex;
+    gap: var(--spacing-xs);
+    flex-wrap: wrap;
+}
+
+.filter-tag {
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border: 2px solid var(--primary-purple);
+    background-color: var(--white);
+    color: var(--primary-purple);
+    border-radius: var(--radius-full);
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.875rem;
+    transition: var(--transition-normal);
+}
+
+.filter-tag:hover {
+    background-color: var(--light-gray);
+}
+
+.filter-tag.active {
+    background: linear-gradient(135deg, #8B5CF6 0%, #06B6D4 100%);
+    color: var(--white);
+    border-color: transparent;
+}
+
+.hobbies-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-md);
+}
+
+.hobby-card {
+    background: var(--light-gray);
+    padding: var(--spacing-md);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition-normal);
+}
+
+.hobby-card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-3px);
+}
+
+.hobby-card.hidden {
+    display: none;
+}
+
+.hobby-card.used-today {
+    border: 2px solid var(--secondary-green);
+    background-color: #F0FDF4;
+}
+
+.hobby-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-xs);
+    flex-wrap: wrap;
+    gap: var(--spacing-xs);
+}
+
+.hobby-header h5 {
+    color: var(--dark-gray);
+    font-size: 1.125rem;
+    margin: 0;
+}
+
+.category-badge {
+    padding: 0.25rem var(--spacing-sm);
+    border-radius: var(--radius-full);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.category-badge.creative {
+    background-color: #FEF3C7;
+    color: #92400E;
+}
+
+.category-badge.physical {
+    background-color: #DBEAFE;
+    color: #1E40AF;
+}
+
+.category-badge.social {
+    background-color: #FCE7F3;
+    color: #9F1239;
+}
+
+.category-badge.relaxation {
+    background-color: #D1FAE5;
+    color: #065F46;
+}
+
+.category-badge.entertainment {
+    background-color: #E0E7FF;
+    color: #3730A3;
+}
+
+.category-badge.other {
+    background-color: #F3F4F6;
+    color: #374151;
+}
+
+.hobby-description {
+    color: var(--gray);
+    font-size: 0.95rem;
+    margin-bottom: var(--spacing-sm);
+    line-height: 1.5;
+}
+
+.hobby-meta {
+    display: flex;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-sm);
+    flex-wrap: wrap;
+}
+
+.hobby-duration,
+.hobby-rating {
+    font-size: 0.875rem;
+    color: var(--gray);
+}
+
+.hobby-actions {
+    display: flex;
+    gap: var(--spacing-xs);
+    flex-wrap: wrap;
+}
+
+.btn-use,
+.btn-edit,
+.btn-delete {
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border: none;
+    border-radius: var(--radius-sm);
+    font-size: 0.875rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition-normal);
+}
+
+.btn-use {
+    background: var(--secondary-green);
+    color: var(--white);
+    flex: 1;
+}
+
+.btn-use:hover {
+    background: #059669;
+}
+
+.btn-edit {
+    background: var(--secondary-blue);
+    color: var(--white);
+}
+
+.btn-edit:hover {
+    background: #2563EB;
+}
+
+.btn-delete {
+    background: var(--accent-red);
+    color: var(--white);
+}
+
+.btn-delete:hover {
+    background: #dc2626;
+}
+
+/* Emergency Relief Section */
+.emergency-relief {
+    padding: var(--spacing-xl) 0;
+    background: var(--white);
+}
+
+.emergency-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-lg);
+}
+
+.emergency-card {
+    background: linear-gradient(135deg, #FEE2E2 0%, #FEF3C7 100%);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    border-left: 4px solid var(--accent-red);
+}
+
+.emergency-card h4 {
+    color: var(--accent-red);
+    margin-bottom: var(--spacing-sm);
+    font-size: 1.25rem;
+}
+
+.emergency-card p {
+    color: var(--dark-gray);
+    margin-bottom: var(--spacing-sm);
+}
+
+.emergency-card ul,
+.emergency-card ol {
+    margin-left: var(--spacing-md);
+    color: var(--dark-gray);
+}
+
+.emergency-card li {
+    margin-bottom: var(--spacing-xs);
+    line-height: 1.6;
+}
+
+/* Empty State */
+.empty-state {
+    text-align: center;
+    padding: var(--spacing-xl);
+    color: var(--gray);
+}
+
+.empty-icon {
+    font-size: 4rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .tips-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hobbies-container {
+        grid-template-columns: 1fr;
+    }
+
+    .emergency-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .filter-tags {
+        width: 100%;
+    }
+
+    .filter-tag {
+        flex: 1;
+        text-align: center;
+    }
+
+    .breathing-circle {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+@media (max-width: 480px) {
+    .add-hobby-form,
+    .hobbies-list {
+        padding: var(--spacing-md);
+    }
+
+    .hobby-actions {
+        width: 100%;
+    }
+
+    .btn-use {
+        width: 100%;
+    }
+}

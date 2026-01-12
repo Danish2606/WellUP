@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Stress Relief - WellUp provides meditation guides and stress management techniques for busy students">
+    <title>Stress Relief - WellUp</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/stress-relief.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="container">
+                <div class="logo">
+                    <a href="index.html"><h1>WellUp</h1></a>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html#home" class="nav-link">Home</a></li>
+                    <li><a href="index.html#features" class="nav-link">Features</a></li>
+                    <li><a href="index.html#about" class="nav-link">About</a></li>
+                    <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+                </ul>
+                <button class="menu-toggle" aria-label="Toggle menu">
+                    <span class="hamburger"></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <h2 class="page-title">🧘 Stress Relief & Relaxation</h2>
+            <p class="page-subtitle">Find peace and balance amidst your busy student life</p>
+        </div>
+    </section>
+
+    <!-- Stress Relief Tips Section -->
+    <section class="stress-tips">
+        <div class="container">
+            <h3 class="section-title">Effective Stress Relief Techniques</h3>
+            <p class="section-subtitle">Proven methods to help you relax and recharge</p>
+
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <div class="tip-icon">🧘‍♀️</div>
+                    <h4>Meditation & Mindfulness</h4>
+                    <p>Practice 5-10 minutes of deep breathing or guided meditation daily. Apps like Headspace or Calm can help you get started.</p>
+                    <div class="tip-duration">5-10 mins</div>
+                </div>
+
+                <div class="tip-card">
+                    <div class="tip-icon">🚶‍♂️</div>
+                    <h4>Take a Walk</h4>
+                    <p>A short walk, especially in nature or green spaces, can clear your mind and reduce stress hormones.</p>
+                    <div class="tip-duration">10-20 mins</div>
+                </div>
+
+                <div class="tip-card">
+                    <div class="tip-icon">🎵</div>
+                    <h4>Listen to Music</h4>
+                    <p>Create playlists of calming music or your favorite upbeat songs. Music therapy is scientifically proven to reduce stress.</p>
+                    <div class="tip-duration">15-30 mins</div>
+                </div>
+
+                <div class="tip-card">
+                    <div class="tip-icon">📝</div>
+                    <h4>Journaling</h4>
+                    <p>Write down your thoughts, worries, or gratitude list. Getting feelings on paper helps process emotions and gain perspective.</p>
+                    <div class="tip-duration">10-15 mins</div>
+                </div>
+
+                <div class="tip-card">
+                    <div class="tip-icon">💆</div>
+                    <h4>Progressive Muscle Relaxation</h4>
+                    <p>Systematically tense and relax different muscle groups. This technique reduces physical tension and mental stress.</p>
+                    <div class="tip-duration">10-15 mins</div>
+                </div>
+
+                <div class="tip-card">
+                    <div class="tip-icon">😂</div>
+                    <h4>Laugh More</h4>
+                    <p>Watch comedy shows, funny videos, or spend time with friends who make you laugh. Laughter reduces stress hormones.</p>
+                    <div class="tip-duration">15-30 mins</div>
+                </div>
+
+                <div class="tip-card">
+                    <div class="tip-icon">🎨</div>
+                    <h4>Creative Activities</h4>
+                    <p>Drawing, coloring, crafting, or any creative hobby engages your mind positively and provides stress relief.</p>
+                    <div class="tip-duration">20-30 mins</div>
+                </div>
+
+                <div class="tip-card">
+                    <div class="tip-icon">☕</div>
+                    <h4>Tea Time</h4>
+                    <p>Enjoy a cup of herbal tea like chamomile or green tea. The ritual and warmth are naturally calming.</p>
+                    <div class="tip-duration">10-15 mins</div>
+                </div>
+
+                <div class="tip-card">
+                    <div class="tip-icon">👥</div>
+                    <h4>Connect with Friends</h4>
+                    <p>Talk to friends or family. Social support is one of the most effective stress buffers available.</p>
+                    <div class="tip-duration">30+ mins</div>
+                </div>
+
+                <div class="tip-card">
+                    <div class="tip-icon">🛀</div>
+                    <h4>Warm Bath/Shower</h4>
+                    <p>Take a warm bath or shower to relax tense muscles. Add aromatherapy oils for extra relaxation.</p>
+                    <div class="tip-duration">15-20 mins</div>
+                </div>
+
+                <div class="tip-card">
+                    <div class="tip-icon">📱</div>
+                    <h4>Digital Detox</h4>
+                    <p>Take breaks from screens and social media. Constant connectivity can increase stress and anxiety.</p>
+                    <div class="tip-duration">1-2 hours</div>
+                </div>
+
+                <div class="tip-card">
+                    <div class="tip-icon">🌙</div>
+                    <h4>Quality Sleep</h4>
+                    <p>Prioritize 7-8 hours of sleep. Good rest is essential for stress management and emotional regulation.</p>
+                    <div class="tip-duration">7-8 hours</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Breathing Exercise Section -->
+    <section class="breathing-exercise">
+        <div class="container">
+            <h3 class="section-title">Quick Breathing Exercise</h3>
+            <p class="section-subtitle">Use this anytime you feel overwhelmed</p>
+            
+            <div class="breathing-container">
+                <div class="breathing-circle" id="breathingCircle">
+                    <p id="breathingText">Click to Start</p>
+                </div>
+                <button class="btn btn-primary" id="breathingBtn" onclick="startBreathingExercise()">Start Exercise</button>
+                <p class="breathing-instruction">Follow the circle as it expands and contracts. Breathe in as it grows, breathe out as it shrinks.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Personal Hobbies & Techniques Section -->
+    <section class="hobbies-section">
+        <div class="container">
+            <h3 class="section-title">Your Personal Stress Relief Activities</h3>
+            <p class="section-subtitle">Track hobbies and techniques that work best for you</p>
+
+            <!-- Add New Hobby Form -->
+            <div class="add-hobby-form">
+                <h4>Add New Hobby or Technique</h4>
+                <form id="hobbyForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="hobbyName">Activity Name</label>
+                            <input type="text" id="hobbyName" placeholder="e.g., Reading, Gaming, Painting" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="hobbyCategory">Category</label>
+                            <select id="hobbyCategory" required>
+                                <option value="">Select category</option>
+                                <option value="creative">Creative</option>
+                                <option value="physical">Physical</option>
+                                <option value="social">Social</option>
+                                <option value="relaxation">Relaxation</option>
+                                <option value="entertainment">Entertainment</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="hobbyDescription">Why it helps you (Optional)</label>
+                        <textarea id="hobbyDescription" rows="2" placeholder="Describe how this activity helps you relieve stress..."></textarea>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="hobbyDuration">Typical Duration</label>
+                            <input type="text" id="hobbyDuration" placeholder="e.g., 30 mins, 1 hour">
+                        </div>
+                        <div class="form-group">
+                            <label for="hobbyRating">Effectiveness</label>
+                            <select id="hobbyRating">
+                                <option value="">Rate effectiveness</option>
+                                <option value="5">⭐⭐⭐⭐⭐ Extremely Helpful</option>
+                                <option value="4">⭐⭐⭐⭐ Very Helpful</option>
+                                <option value="3">⭐⭐⭐ Moderately Helpful</option>
+                                <option value="2">⭐⭐ Somewhat Helpful</option>
+                                <option value="1">⭐ Slightly Helpful</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">
+                        <span>➕</span> Add Activity
+                    </button>
+                </form>
+            </div>
+
+            <!-- Hobbies List -->
+            <div class="hobbies-list">
+                <div class="list-header">
+                    <h4>My Stress Relief Activities</h4>
+                    <div class="filter-tags">
+                        <button class="filter-tag active" data-filter="all">All</button>
+                        <button class="filter-tag" data-filter="creative">Creative</button>
+                        <button class="filter-tag" data-filter="physical">Physical</button>
+                        <button class="filter-tag" data-filter="social">Social</button>
+                        <button class="filter-tag" data-filter="relaxation">Relaxation</button>
+                        <button class="filter-tag" data-filter="entertainment">Entertainment</button>
+                    </div>
+                </div>
+                <div id="hobbiesContainer" class="hobbies-container">
+                    <!-- Sample hobbies -->
+                    <div class="hobby-card" data-category="relaxation">
+                        <div class="hobby-header">
+                            <h5>Evening Meditation</h5>
+                            <span class="category-badge relaxation">Relaxation</span>
+                        </div>
+                        <p class="hobby-description">Helps me unwind before bed and clear my mind</p>
+                        <div class="hobby-meta">
+                            <span class="hobby-duration">⏱️ 15 mins</span>
+                            <span class="hobby-rating">⭐⭐⭐⭐⭐</span>
+                        </div>
+                        <div class="hobby-actions">
+                            <button class="btn-use" onclick="markAsUsed(this)">✓ Did This Today</button>
+                            <button class="btn-edit" onclick="editHobby(this)">✏️</button>
+                            <button class="btn-delete" onclick="deleteHobby(this)">🗑️</button>
+                        </div>
+                    </div>
+
+                    <div class="hobby-card" data-category="physical">
+                        <div class="hobby-header">
+                            <h5>Evening Jog</h5>
+                            <span class="category-badge physical">Physical</span>
+                        </div>
+                        <p class="hobby-description">Running helps release endorphins and clear stress</p>
+                        <div class="hobby-meta">
+                            <span class="hobby-duration">⏱️ 30 mins</span>
+                            <span class="hobby-rating">⭐⭐⭐⭐</span>
+                        </div>
+                        <div class="hobby-actions">
+                            <button class="btn-use" onclick="markAsUsed(this)">✓ Did This Today</button>
+                            <button class="btn-edit" onclick="editHobby(this)">✏️</button>
+                            <button class="btn-delete" onclick="deleteHobby(this)">🗑️</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Emergency Stress Relief Section -->
+    <section class="emergency-relief">
+        <div class="container">
+            <h3 class="section-title">Feeling Overwhelmed Right Now?</h3>
+            <div class="emergency-cards">
+                <div class="emergency-card">
+                    <h4>🆘 Immediate Help</h4>
+                    <p>If you're experiencing severe stress, anxiety, or mental health concerns:</p>
+                    <ul>
+                        <li>Contact your school counselor</li>
+                        <li>Reach out to a trusted friend or family member</li>
+                        <li>Call a mental health helpline</li>
+                    </ul>
+                </div>
+                <div class="emergency-card">
+                    <h4>⚡ Quick Relief (Under 5 Minutes)</h4>
+                    <ol>
+                        <li>Take 10 deep breaths</li>
+                        <li>Splash cold water on your face</li>
+                        <li>Do 10 jumping jacks</li>
+                        <li>Step outside for fresh air</li>
+                        <li>Listen to one calming song</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 WellUp. All rights reserved.</p>
+            <p>Empowering polytechnic students to lead healthier lives.</p>
+        </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+    <script src="js/stress-relief.js"></script>
+</body>
+</html>
